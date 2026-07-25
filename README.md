@@ -35,3 +35,9 @@ Edit `default.json`. Every repo picks it up on its next run. Validate before pus
 ```bash
 pnpm dlx --package renovate renovate-config-validator default.json
 ```
+
+## License
+
+AGPL-3.0-or-later, see [LICENSE](LICENSE).
+
+Copyright (C) 2026 Grok Image Compression Inc.
