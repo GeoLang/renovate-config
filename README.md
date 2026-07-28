@@ -18,6 +18,9 @@ Each repo has a `renovate.json` at its root:
 ## Policy
 
 - Weekly, Monday before 06:00, max 5 open PRs per repo.
+- Releases must be at least 3 days old, so a compromised package gets caught
+  upstream before a PR proposes it. Repos may also gate installs (viewtopia's
+  pnpm check requires 24h), which this 3-day floor always satisfies.
 - GitHub Actions bumps land as one grouped PR, labelled `ci`.
 - Cargo and npm minor/patch land as one grouped PR each. Majors stay separate so a
   breaking bump is never mixed with routine updates.
