@@ -6,6 +6,7 @@
     ":semanticCommits"
   ],
   "schedule": ["before 06:00 on monday"],
+  "minimumReleaseAge": "3 days",
   "prConcurrentLimit": 5,
   "labels": ["dependencies"],
   "packageRules": [
