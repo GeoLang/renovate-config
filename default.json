@@ -18,11 +18,13 @@
     {
       "matchManagers": ["cargo"],
       "matchUpdateTypes": ["minor", "patch"],
+      "matchJsonata": ["isBreaking != true"],
       "groupName": "cargo non-major"
     },
     {
       "matchManagers": ["npm"],
       "matchUpdateTypes": ["minor", "patch"],
+      "matchJsonata": ["isBreaking != true"],
       "groupName": "npm non-major"
     }
   ],

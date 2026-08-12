@@ -22,8 +22,11 @@ Each repo has a `renovate.json` at its root:
   upstream before a PR proposes it. Repos may also gate installs (viewtopia's
   pnpm check requires 24h), which this 3-day floor always satisfies.
 - GitHub Actions bumps land as one grouped PR, labelled `ci`.
-- Cargo and npm minor/patch land as one grouped PR each. Majors stay separate so a
-  breaking bump is never mixed with routine updates.
+- Cargo and npm minor/patch land as one grouped PR each, but only when Renovate says the
+  update is not breaking. Anything breaking stays a separate PR, so a breaking bump is
+  never mixed with routine updates. The `isBreaking` test is what catches a `0.x` bump:
+  Renovate calls `0.10` to `0.11` a minor, because major/minor/patch is purely positional,
+  and only `isBreaking` knows the minor position is the breaking one below 1.0.
 - Lockfile maintenance runs monthly.
 - Everything is labelled `dependencies`; the Dependency Dashboard issue tracks the rest.
 
