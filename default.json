@@ -26,6 +26,10 @@
       "matchUpdateTypes": ["minor", "patch"],
       "matchJsonata": ["isBreaking != true"],
       "groupName": "npm non-major"
+    },
+    {
+      "matchPackageNames": ["bincode"],
+      "allowedVersions": "<3"
     }
   ],
   "lockFileMaintenance": {
