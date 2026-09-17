@@ -1,8 +1,8 @@
 # renovate-config
 
-Shared [Renovate](https://docs.renovatebot.com) config for the GeoLang org. Every repo
-extends `default.json`, so dependency policy is set here once instead of drifting across
-24 copies.
+Shared [Renovate](https://docs.renovatebot.com) config for the GeoLang org. Dependency
+policy is set here once instead of drifting across the 24 repos that extend
+`default.json`. The proj4rs fork does not extend it.
 
 ## Using it
 
@@ -31,10 +31,10 @@ policy should not carry. viewtopia does that to hold `@babel/core` below 8 and
   Renovate calls `0.10` to `0.11` a minor, because major/minor/patch is purely positional,
   and only `isBreaking` knows the minor position is the breaking one below 1.0.
 - Lockfile maintenance runs monthly.
-- Everything is labelled `dependencies`; the Dependency Dashboard issue tracks the rest.
+- Everything is labelled `dependencies`. The Dependency Dashboard issue tracks the rest.
 
 Renovate auto-detects package managers, so no per-ecosystem list is needed. This replaced
-Dependabot in July 2026; the old `dependabot.yml` declared ecosystems by hand, which is
+Dependabot in July 2026. The old `dependabot.yml` declared ecosystems by hand, which is
 how viewtopia ended up requesting `cargo` updates for a repo with no Cargo.toml.
 
 ## Changing policy
